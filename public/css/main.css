@@ -1,0 +1,481 @@
+.card-header {
+    background-color: #f0f0f0;
+
+    border-bottom: 1px solid #dee2e6;
+    color: #32577e;
+    padding: 20px 0;
+}
+.card {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+    border: none;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.logo-container {
+    margin-bottom: 40px;
+}
+
+.logo-container-img {
+    width: 150px;
+    height: auto;
+}
+
+.card-body {
+    padding: 20px;
+}
+
+.email_password_input {
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.form-control:focus {
+    border-color: #66afe9;
+    outline: 0;
+    box-shadow: 0 0 8px rgba(102, 175, 233, 0.6);
+}
+
+.login-box {
+    margin: 6% auto;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 0 25px 0 rgba(0, 0, 0, 0.2);
+    width: 510px !important;
+    height: 620px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.password-box {
+    margin: 6% auto;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 0 25px 0 rgba(0, 0, 0, 0.2);
+    width: 510px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.password-box-2 {
+    margin: 6% auto;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 0 25px 0 rgba(0, 0, 0, 0.2);
+    width: 510px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+@media screen and (max-width: 536px) {
+    .password-box {
+        width: 300px;
+    }
+    .password-box-2 {
+        width: 300px;
+    }
+}
+
+@media screen and (max-width: 342px) {
+    .password-box-2 {
+        width: auto;
+    }
+}
+
+@media screen and (max-width: 562px) {
+    .login-box {
+        width: 300px !important;
+        height: 680px;
+    }
+    .row-column {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+    }
+    .row-column div {
+        width: 100% !important;
+    }
+    .icheck-primary {
+        display: flex;
+        align-items: center;
+    }
+}
+.w-1200 {
+    max-width: 1200px;
+}
+
+.form-control:focus {
+    border-color: #66afe9;
+    outline: 0;
+    box-shadow: 0 0 8px rgba(102, 175, 233, 0.6);
+}
+.input-group {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.help-box {
+    margin: 6% auto;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 0 25px 0 rgba(0, 0, 0, 0.2);
+    max-width: 900px !important;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.account-create-box {
+    margin: 6% auto;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 0 25px 0 rgba(0, 0, 0, 0.2);
+    width: 600px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+@media screen and (max-width: 604px) {
+    .account-create-box {
+        width: 300px;
+    }
+}
+
+.row.w-full {
+    padding: 0 !important;
+    margin: 0 !important;
+}
+
+.my-left {
+    margin-right: auto;
+}
+.no-underline {
+    text-decoration: none;
+}
+
+.my-nav {
+    background: #2563eb !important;
+    color: white;
+}
+
+.icons {
+    display: flex !important;
+    justify-content: space-between !important;
+}
+
+.searcher {
+    display: flex !important;
+    align-items: center !important;
+    width: 30rem !important;
+}
+
+@media screen and (max-width: 504px) {
+    .searcher {
+        width: 20rem !important;
+    }
+}
+
+@media screen and (max-width: 583px) {
+    .lab-request-form {
+        flex-direction: column;
+    }
+    .section {
+        width: 100% !important;
+    }
+}
+
+.max-40 {
+    max-width: 150px;
+    margin-left: 20px;
+}
+
+.table-container {
+    margin-top: 10px !important;
+    width: 100%;
+    min-width: 1000px;
+
+    padding: 2px !important;
+}
+
+.table-container-lab {
+    margin-top: 10px !important;
+    width: 100%;
+    min-width: 430px;
+
+    padding: 2px !important;
+}
+
+.w-100 {
+    width: 100%;
+}
+
+.my-lab {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.table-lab {
+    width: 80%;
+}
+.table-header {
+    background-color: #2563eb;
+    color: white;
+    text-align: center;
+}
+
+.border {
+    border: 1px solid white;
+    padding: 5px;
+}
+.border-black {
+    border: 1px solid black;
+}
+
+.table-body {
+    color: black;
+    background-color: white;
+    text-align: center;
+}
+
+.my-subscribe {
+    margin-top: 5px;
+    border: solid 1px #fff;
+    background: #00319b !important;
+}
+
+.my-subscribe:focus,
+.my-subscribe:active,
+.my-subscribe:hover {
+    border: solid 1px #fff;
+    background: #2563eb !important;
+}
+
+.body-fill,
+html {
+    height: 100%;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+.main-content {
+    flex: 1;
+}
+
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 1040;
+    display: none;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.overlay.show {
+    display: block;
+    opacity: 1;
+}
+
+/* Blur effect */
+.blur {
+    filter: blur(4px);
+}
+
+/* Offcanvas custom styles */
+.offcanvas {
+    z-index: 1050; /* Higher than overlay to be above it */
+}
+
+.circular-image {
+    width: 300px; /* Adjust the width as per your design */
+    height: 300px; /* Ensure height matches width for a perfect circle */
+
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+.circular-image img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensures the image fills the container */
+}
+
+.circular-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Prevent horizontal scrolling */
+.offcanvas-body {
+    overflow-x: hidden;
+}
+
+.text-start {
+    text-align: left !important;
+}
+
+.disabled {
+    pointer-events: none;
+    background-color: grey !important;
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+.text-red {
+    color: red;
+}
+
+.text-white {
+    color: white;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.input-group {
+    display: flex;
+    align-items: center;
+}
+
+.input-group .form-control {
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+}
+
+.input-group .input-group-append .input-group-text {
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+    padding: 10px 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #e9ecef; /* Optional: match input background */
+    border: 1px solid #ced4da; /* Optional: match input border */
+}
+
+.input-group .input-group-append .input-group-text .fas {
+    font-size: 1em; /* Adjust the icon size */
+    color: #6c757d; /* Optional: change the icon color */
+}
+
+.create-account-controls {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-sizing: border-box;
+    margin-bottom: 10px;
+    font-size: 16px;
+}
+.create-account-controls-2 {
+    width: 90%;
+    margin: 10px;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-sizing: border-box;
+    margin-bottom: 10px;
+    font-size: 16px;
+}
+
+.lab-request-form {
+    font-size: 17px;
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 40px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background-color: #f9f9f9;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    box-sizing: border-box;
+}
+
+.section {
+    width: calc(50% - 10px);
+    margin-bottom: 30px;
+    box-sizing: border-box;
+}
+
+.section:nth-child(even) {
+    margin-right: 0;
+}
+
+.section h3 {
+    color: #007bff;
+    margin-bottom: 15px;
+}
+
+.section label {
+    display: block;
+    margin: 8px 0;
+    cursor: pointer;
+    color: #555;
+}
+
+.section label:hover {
+    color: #007bff;
+}
+
+.section input[type="checkbox"] {
+    margin-right: 10px;
+}
+
+.triash-form {
+    max-width: 500px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.my-profile {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
+    position: relative;
+}
+
+.my-profile img {
+    border-radius: 50%;
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+}
+.hidden {
+    display: none;
+}
+
+.my-profile span {
+    position: absolute;
+    left: 60%;
+    top: 80%;
+    font-size: 30px !important;
+    font-weight: 900;
+    cursor: pointer;
+}
+
+.my-name {
+    display: flex;
+    align-items: center;
+}
