@@ -166,8 +166,6 @@ class AuthController extends Controller
                 'gender' => 'required',
                 'dob' => 'required',
                 'region' => 'required',
-
-                'email' => 'email|unique:users,email',
                 'zone' => 'required',
                 'woreda' => 'required',
                 'ketena' => 'required',
@@ -186,7 +184,6 @@ class AuthController extends Controller
             'first_name'=> $request->fname,
             'father_name'=> $request->lname,
             'grand_father_name'=> $request->gname,
-            'email'=>$request->email,
             'gender'=> $request->gender,
             'date_of_birth'=> $request->dob,
 
@@ -209,63 +206,63 @@ class AuthController extends Controller
      }
 
      public function update(User $user, User $other)
-    {
-        $request = request();
-        $validated = $request->validate(
-            [
-                'fname' => 'required',
-                'lname' => 'required',
-                'gname' => 'required',
-                'phone' => 'required',
-                'gender' => 'required',
-                'dob' => 'required',
-                'region' => 'required',
-                'role' => 'required',
-                'email' => 'required|email',
-                'zone' => 'required',
-                'woreda' => 'required',
-                'ketena' => 'required',
-                'kebele' => 'required',
-                'house_number' => 'required',
-                'emergency_name' => 'required',
-                'emergency_phone' => 'required',
+     {
+         $request = request();
+         $validated = $request->validate(
+             [
+                 'fname' => 'required',
+                 'lname' => 'required',
+                 'gname' => 'required',
+                 'phone' => 'required',
+                 'gender' => 'required',
+                 'dob' => 'required',
+                 'region' => 'required',
+                 'role' => 'required',
+                 'email' => 'required|email',
+                 'zone' => 'required',
+                 'woreda' => 'required',
+                 'ketena' => 'required',
+                 'kebele' => 'required',
+                 'house_number' => 'required',
+                 'emergency_name' => 'required',
+                 'emergency_phone' => 'required',
+             ]
+         );
 
-            ]);
+         if ($request->hasFile('file-name')) {
+             $file = $request->file('file-name');
+             if ($other->profile) {
+                 Storage::disk('public')->delete($other->profile); // Delete the old file
+             }
+             $uniqueFolderName = date('YmdHis') . '_' . uniqid();
+             $filePath = $file->storeAs('my_account/' . $uniqueFolderName, $uniqueFolderName . '_' . $file->getClientOriginalName(), 'public');
+             $other->profile = $filePath;
+         }
 
-        if (request()->hasFile('file-name')) {
-            $file = request()->file('file-name');
-            if ($other->profile) {
-                $directoryPath = dirname($other->profile);
-                Storage::disk('public')->deleteDirectory($directoryPath);
-            }
-            $uniqueFolderName = date('YmdHis') . '_' . uniqid();
-            $filePath = $file->storeAs('my_account/' . $uniqueFolderName, $file->getClientOriginalName(), 'public');
-            $other->profile = $filePath;
-        }
+         // Update user details
+         $other->first_name = $validated['fname'];
+         $other->father_name = $validated['lname'];
+         $other->grand_father_name = $validated['gname'];
+         $other->email = $validated['email'];
+         $other->gender = $validated['gender'];
+         $other->date_of_birth = $validated['dob'];
+         $other->region = $validated['region'];
+         $other->zone = $validated['zone'];
+         $other->woreda = $validated['woreda'];
+         $other->ketena = $validated['ketena'];
+         $other->kebele = $validated['kebele'];
+         $other->house_number = $validated['house_number'];
+         $other->phone = $validated['phone'];
+         $other->role = $validated['role'];
+         $other->emergency_name = $validated['emergency_name'];
+         $other->emergency_phone = $validated['emergency_phone'];
 
+         // Save updated user
+         $other->save(); // Use save() instead of update()
 
-        $other->{'first_name'} = $validated['fname'];
-        $other->{'father_name'} = $validated['lname'];
-        $other->{'grand_father_name'} = $validated['gname'];
-        $other->{'email'} = $validated['email'];
-        $other->{'gender'} = $validated['gender'];
-        $other->{'date_of_birth'} = $validated['dob'];
-        $other->{'region'} = $validated['region'];
+         return redirect()->route('admin.edit-employee', compact('user', 'other'))->with('success', 'Account updated successfully!');
+     }
 
-        $other->{'zone'} = $validated['zone'];
-        $other->{'woreda'} = $validated['woreda'];
-        $other->{'ketena'} = $validated['ketena'];
-        $other->{'kebele'} = $validated['kebele'];
-        $other->house_number = $validated['house_number'];
-        $other->{'phone'} = $validated['phone'];
-        $other->{'role'} = $validated['role'];
-        $other->{'emergency_name'} = $validated['emergency_name'];
-        $other->{'emergency_phone'} = $validated['emergency_phone'];
-
-
-        $other->update();
-        return redirect()->route('admin.edit-employee', compact('user', 'other'))->with('success', 'Account updated successfully!');
-    }
      public function update_receptionist(User $user, User $other)
     {
         $request = request();
@@ -280,7 +277,6 @@ class AuthController extends Controller
                 'dob' => 'required',
                 'region' => 'required',
 
-                'email' => 'required|email',
                 'zone' => 'required',
                 'woreda' => 'required',
                 'ketena' => 'required',
@@ -297,7 +293,6 @@ class AuthController extends Controller
         $other->{'first_name'} = $validated['fname'];
         $other->{'father_name'} = $validated['lname'];
         $other->{'grand_father_name'} = $validated['gname'];
-        $other->{'email'} = $validated['email'];
         $other->{'gender'} = $validated['gender'];
         $other->{'date_of_birth'} = $validated['dob'];
         $other->{'region'} = $validated['region'];

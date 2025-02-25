@@ -129,14 +129,14 @@
                 </div>
 
 
-                <div class="form-group">
+                {{-- <div class="form-group">
                     <label for="email">Email:</label>
                     <input type="email" id="email" name="email" class="create-account-controls" value="{{ $other->email ?? '' }}">
 
                     @error('email')
                         <span class="fs-6 text-danger mt-2 d-block">{{ $message }}</span>
                     @enderror
-                </div>
+                </div> --}}
 
                 <div class="form-group">
                     <div class="">

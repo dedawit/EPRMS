@@ -8,7 +8,8 @@
         <div class="registration_form">
             <h3 class="text-center">Edit Employee Account</h3>
 
-            <form action="{{route('admin.update-employee', [$user->id, $other->id])}}" method="POST">
+            <form action="{{ route('admin.update-employee', [$user->id, $other->id]) }}" method="POST" enctype="multipart/form-data">
+
                 @csrf
                 @method('put')
 
